@@ -11,14 +11,13 @@ describe('mushrooms routes', () => {
 
   it('/mushrooms should return a list of mushrooms', async () => {
     const res = await request(app).get('/mushrooms');
-    expect(res.body.length).toEqual(6);
     expect(res.body[0]).toEqual({
       id: expect.any(String),
       common_name: expect.any(String),
     });
   });
 
-  it('/mushrooms/:id should return cat detail', async () => {
+  it('/mushrooms/:id should return mushroom detail', async () => {
     const res = await request(app).get('/mushrooms/1');
     const kingBolete = {
       id: '1',
